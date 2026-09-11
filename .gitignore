@@ -8,5 +8,9 @@ shots/
 .claude/
 *.log
 
-# Large local video files (exceeds GitHub push limits of 100MB)
+# Local python dev server & asset scripts (do not deploy to Vercel)
+tools/
+requirements.txt
+
+# Heavy video portfolio archives (>100MB exceeds GitHub push limits)
 public/assets/

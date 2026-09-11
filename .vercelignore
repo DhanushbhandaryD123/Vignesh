@@ -1,0 +1,5 @@
+tools/
+docs/
+*.py
+*.bak
+*.mov
