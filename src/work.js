@@ -556,8 +556,20 @@ function renderContent() {
   setupCards();
 }
 
+const R2_CDN = 'https://pub-106712c34ecf4a41864eac3b5eb2058e.r2.dev';
+
+function getVideoUrl(video) {
+  // If running locally, use local files
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return video.relPath;
+  }
+  // When live on Vercel, stream high-speed directly from Cloudflare R2 CDN!
+  return `${R2_CDN}/${video.category}/${video.file}`;
+}
+
 function renderCard(video) {
   const catObj = CATEGORIES.find((c) => c.id === video.category);
+  const videoUrl = getVideoUrl(video);
   return `
     <article class="video-card" data-video-id="${video.id}">
       <div class="video-card__media">
@@ -566,7 +578,7 @@ function renderCard(video) {
           muted 
           playsinline 
           loop 
-          data-src="${video.relPath}">
+          data-src="${videoUrl}">
         </video>
         <div class="video-card__overlay">
           <div class="video-card__play">
@@ -654,6 +666,7 @@ function openTheater(videoId) {
   currentVideoIndex = idx;
   const video = currentVisibleVideos[currentVideoIndex];
   const catObj = CATEGORIES.find((c) => c.id === video.category);
+  const videoUrl = getVideoUrl(video);
 
   modalCat.textContent = catObj ? catObj.title : video.category;
   modalTitle.textContent = video.title;
@@ -670,8 +683,8 @@ function openTheater(videoId) {
   if (modalBigPlay) modalBigPlay.classList.remove('is-visible');
   if (modalUnmuteTip) modalUnmuteTip.classList.remove('is-visible');
 
-  // Load and play video in Full HD
-  modalVideo.src = video.relPath;
+  // Load and play video in Full HD from Cloudflare R2
+  modalVideo.src = videoUrl;
   modalVideo.currentTime = 0;
   modalVideo.load();
   modalVideo.muted = false; // Try unmuted sound first
