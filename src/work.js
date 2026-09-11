@@ -564,7 +564,7 @@ function getVideoUrl(video) {
     return video.relPath;
   }
   // When live on Vercel, stream high-speed directly from Cloudflare R2 CDN!
-  return `${R2_CDN}/${video.category}/${video.file}`;
+  return `${R2_CDN}/assets/${video.category}/${video.file}`;
 }
 
 function renderCard(video) {
