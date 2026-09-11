@@ -1,0 +1,12 @@
+# Virtual environment & python caches
+.venv/
+__pycache__/
+
+# Output shots & temp logs
+shots/
+.gemini/
+.claude/
+*.log
+
+# Large local video files (exceeds GitHub push limits of 100MB)
+public/assets/

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WORK — Vignesh · Artist · Creative · Storyteller</title>
+<meta name="description" content="Cinematic works, commercials, music videos, and reels by Vignesh.">
+<meta name="theme-color" content="#070707">
+
+<link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/fonts/oswald-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="src/styles/app.css">
+<link rel="stylesheet" href="src/styles/work.css">
+</head>
+<body class="work-page">
+
+<!-- Header -->
+<div class="work-hdr-wrap">
+  <header class="hdr" id="hdr">
+    <svg class="hdr__rule" id="hdrRule" aria-hidden="true" preserveAspectRatio="none" style="display:none">
+      <polyline id="hdrRulePath" fill="none" stroke="currentColor" stroke-width="1.25"
+                vector-effect="non-scaling-stroke"/>
+    </svg>
+
+    <a class="hdr__mark" href="index.html" aria-label="Vignesh, home">
+      <span class="mark-word">VIGNESH</span>
+    </a>
+
+    <nav class="hdr__nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html" class="is-active">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="menu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </header>
+</div>
+
+<!-- Mobile Drawer Navigation -->
+<nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html" class="is-active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="menu__tag">••• Selected Works •••</p>
+</nav>
+
+<!-- Main Page Content -->
+<main>
+  <!-- Work Intro Hero -->
+  <section class="work-hero">
+    <div class="work-hero__badge">
+      <i></i>
+      <span>Portfolio Archive · 50 Films</span>
+    </div>
+    <h1 class="work-hero__title">
+      Selected <span>Works</span>
+    </h1>
+    <p class="work-hero__desc">
+      A curated archive of commercial campaigns, AI visual experiments, music videos, 
+      architectural tours, and high-impact social media reels edited with cinematic precision.
+    </p>
+  </section>
+
+  <!-- Sticky Filter & Search Bar -->
+  <section class="work-controls">
+    <div class="work-controls__inner">
+      <div class="work-tabs" id="workTabs">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="work-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="workSearchInput" placeholder="Search films, brands..." aria-label="Search films">
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorized Video Grids Container -->
+  <div class="work-content" id="workContent">
+    <!-- Populated by src/work.js -->
+  </div>
+</main>
+
+<!-- Fullscreen Cinematic Theater Modal -->
+<div class="theater-modal" id="theaterModal" aria-modal="true" role="dialog">
+  <button class="theater-close" id="theaterClose" aria-label="Close Theater">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  </button>
+
+  <div class="theater-modal__dialog" id="theaterDialog">
+    <div class="theater-modal__video-wrap" id="theaterVideoWrap">
+      <div class="theater-loader" id="theaterLoader" aria-label="Loading video">
+        <div class="theater-spinner"></div>
+      </div>
+
+      <div class="theater-big-play" id="theaterBigPlay" aria-label="Play video">
+        <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+      </div>
+
+      <div class="theater-unmute-tip" id="theaterUnmuteTip" role="button" aria-label="Unmute audio">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+        <span>Click to unmute sound</span>
+      </div>
+
+      <video id="theaterVideo" controls playsinline preload="auto"></video>
+    </div>
+
+    <div class="theater-modal__bar">
+      <div class="theater-modal__meta">
+        <span class="theater-modal__cat" id="theaterCat">Category</span>
+        <h3 class="theater-modal__title" id="theaterTitle">Film Title</h3>
+      </div>
+
+      <div class="theater-modal__actions">
+        <button class="theater-btn" id="theaterPrev" aria-label="Previous Film">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Prev</span>
+        </button>
+        <button class="theater-btn" id="theaterNext" aria-label="Next Film">
+          <span>Next</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <button class="theater-btn theater-btn--fullscreen" id="theaterFullscreen" aria-label="Toggle Fullscreen">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+          </svg>
+          <span>Fullscreen</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page Footer -->
+<footer class="work-footer">
+  <div class="work-footer__inner">
+    <div>&copy; 2026 Vignesh &mdash; All rights reserved.</div>
+    <div style="display: flex; gap: 20px;">
+      <a href="index.html">Home Experience</a>
+      <a href="index.html#chrono">Timeline</a>
+      <a href="index.html#fin">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="src/work.js"></script>
+</body>
+</html>

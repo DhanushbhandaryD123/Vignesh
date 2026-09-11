@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CONTACT — Vignesh · Artist · Creative · Storyteller</title>
+<meta name="description" content="Contact Vignesh for video editing, creative direction, commercial production, and digital marketing.">
+<meta name="theme-color" content="#070707">
+
+<link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="public/fonts/oswald-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="src/styles/app.css">
+<link rel="stylesheet" href="src/styles/about-contact.css">
+<style>
+  .contact-form-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 56px;
+  }
+  .contact-box {
+    background: #09090c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 36px;
+  }
+  .contact-box h3 {
+    font-family: var(--ui);
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 11.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fff;
+    font-family: var(--ui);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .form-group input:focus, .form-group textarea:focus {
+    border-color: var(--ink);
+    box-shadow: 0 0 12px rgba(222, 27, 28, 0.25);
+  }
+  .btn-submit {
+    background: var(--ink);
+    color: #fff;
+    border: 1px solid var(--ink-hot);
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-family: var(--ui);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn-submit:hover {
+    background: var(--ink-hot);
+    box-shadow: 0 0 20px rgba(222, 27, 28, 0.5);
+    transform: translateY(-2px);
+  }
+  .social-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .social-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--ui);
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+  }
+  .social-item:hover {
+    background: rgba(222, 27, 28, 0.1);
+    border-color: var(--ink);
+    transform: translateX(4px);
+  }
+  @media (max-width: 900px) {
+    .contact-form-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body class="work-page">
+
+<!-- Top Fixed Header -->
+<header class="hdr" id="hdr">
+  <a class="hdr__mark" href="index.html" aria-label="Vignesh, home">
+    <span class="mark-word">VIGNESH</span>
+  </a>
+
+  <nav class="hdr__nav" aria-label="Primary">
+    <ul>
+      <li><a href="index.html" data-nav>Home</a></li>
+      <li><a href="work.html" data-nav>Work</a></li>
+      <li><a href="about.html" data-nav>About</a></li>
+      <li><a href="contact.html" class="is-active" data-nav>Contact</a></li>
+    </ul>
+  </nav>
+
+  <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="menu">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span>
+    <span class="sr-only">Menu</span>
+  </button>
+</header>
+
+<!-- Mobile Drawer Navigation -->
+<nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+  <ul>
+    <li><a href="index.html" data-nav>Home</a></li>
+    <li><a href="work.html" data-nav>Work</a></li>
+    <li><a href="about.html" data-nav>About</a></li>
+    <li><a href="contact.html" class="is-active" data-nav>Contact</a></li>
+  </ul>
+  <p class="menu__tag">••• Vignesh Portfolio •••</p>
+</nav>
+
+<main class="ac-wrap">
+  <!-- Hero Intro -->
+  <section class="ac-hero">
+    <div class="ac-badge">
+      <i></i>
+      <span>Available for Commissions &amp; Collaborations</span>
+    </div>
+    <h1 class="ac-title">
+      Get in <span>Touch</span>
+    </h1>
+    <p class="ac-desc">
+      Whether you need high-end commercial video editing, brand storytelling, marketing campaigns, 
+      or creative direction, let's create something extraordinary together.
+    </p>
+  </section>
+
+  <!-- Contact Details Strip (Matches User Image 2) -->
+  <section class="contact-strip-wrap" style="border: none; padding-top: 0; margin-top: 0;">
+    <div class="contact-strip">
+      <!-- Email -->
+      <div class="contact-col">
+        <span class="contact-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+          </svg>
+          Email
+        </span>
+        <a href="mailto:shettigarvignesh191@gmail.com" class="contact-val">
+          shettigarvignesh191@gmail.com
+        </a>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact-col">
+        <span class="contact-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Phone
+        </span>
+        <a href="tel:+919343572571" class="contact-val">
+          +91 93435 72571
+        </a>
+      </div>
+
+      <!-- Base -->
+      <div class="contact-col">
+        <span class="contact-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Base
+        </span>
+        <span class="contact-val">
+          Kundapura / Udupi, Karnataka
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Contact Options -->
+  <div class="contact-form-wrap">
+    <!-- Send Message Form -->
+    <div class="contact-box">
+      <h3>Direct Message</h3>
+      <form onsubmit="event.preventDefault(); window.location.href='mailto:shettigarvignesh191@gmail.com?subject=Project Inquiry from ' + document.getElementById('cName').value + '&body=' + encodeURIComponent(document.getElementById('cMsg').value);">
+        <div class="form-group">
+          <label for="cName">Your Name</label>
+          <input type="text" id="cName" placeholder="e.g. John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="cEmail">Your Email</label>
+          <input type="email" id="cEmail" placeholder="e.g. john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="cMsg">Project Details</label>
+          <textarea id="cMsg" rows="4" placeholder="Tell me about your project, timeline, or vision..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Socials & Direct Links -->
+    <div class="contact-box">
+      <h3>Connect &amp; Follow</h3>
+      <p style="color: var(--dim); font-size: 14px; margin: 0 0 20px;">
+        Follow my ongoing commercial edits, creative reels, and behind-the-scenes work across social channels.
+      </p>
+
+      <div class="social-grid">
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-item">
+          <span>Instagram</span>
+          <span style="color: var(--ink);">Explore &rarr;</span>
+        </a>
+        <a href="https://behance.net" target="_blank" rel="noopener" class="social-item">
+          <span>Behance</span>
+          <span style="color: var(--ink);">Portfolio &rarr;</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-item">
+          <span>LinkedIn</span>
+          <span style="color: var(--ink);">Connect &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="work-footer">
+  <div class="work-footer__inner">
+    <div>&copy; 2026 Vignesh &mdash; All rights reserved.</div>
+    <div style="display: flex; gap: 20px;">
+      <a href="index.html">Home Experience</a>
+      <a href="work.html">Work Showcase</a>
+      <a href="about.html">About Vignesh</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', !open);
+      menu.hidden = open;
+    });
+  }
+</script>
+</body>
+</html>

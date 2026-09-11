@@ -1,0 +1,352 @@
+/* ==========================================================================
+   ABOUT & CONTACT PAGE STYLES
+   Toolkit grid, Education timeline, and Contact info strip
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAYOUT & CONTAINER
+   -------------------------------------------------------------------------- */
+.ac-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vh, 80px) var(--edge) 100px;
+}
+
+.ac-hero {
+  margin-bottom: clamp(48px, 6vh, 80px);
+}
+
+.ac-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  background: rgba(222, 27, 28, 0.08);
+  border: 1px solid rgba(222, 27, 28, 0.25);
+  border-radius: 999px;
+}
+
+.ac-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-hot);
+  box-shadow: 0 0 10px var(--ink-hot);
+}
+
+.ac-title {
+  font-family: var(--disp);
+  font-size: clamp(44px, 6.5vw, 96px);
+  line-height: 0.95;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.ac-title span {
+  color: var(--ink);
+}
+
+.ac-desc {
+  max-width: 720px;
+  font-size: clamp(15px, 1.15vw, 18px);
+  color: var(--dim);
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION HEADERS
+   -------------------------------------------------------------------------- */
+.ac-section-header {
+  margin-bottom: 32px;
+  position: relative;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.ac-section-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 48px;
+  height: 2px;
+  background: var(--ink);
+}
+
+.ac-section-title {
+  font-family: var(--disp);
+  font-size: clamp(28px, 3vw, 42px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+  color: #fff;
+}
+
+.ac-section-sub {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   TOOLKIT / SKILLS GRID (MATCHES USER IMAGE 1)
+   -------------------------------------------------------------------------- */
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: clamp(60px, 8vh, 100px);
+}
+
+.toolkit-card {
+  background: #09090b;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 44px 20px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  cursor: default;
+  transition: transform 0.28s var(--ease-out), border-color 0.28s var(--ease-out), box-shadow 0.28s var(--ease-out);
+}
+
+.toolkit-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(222, 27, 28, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(222, 27, 28, 0.15);
+}
+
+.toolkit-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.toolkit-card:hover .toolkit-icon {
+  transform: scale(1.08);
+}
+
+/* App specific icon badges */
+.icon-pr {
+  background: #00005b;
+  color: #9999ff;
+  border: 1px solid #1a1a7a;
+}
+.icon-ae {
+  background: #2b0042;
+  color: #d199ff;
+  border: 1px solid #4a1268;
+}
+.icon-cc {
+  background: #18181b;
+  color: #ffffff;
+  border: 1px solid #2e2e34;
+}
+.icon-ca {
+  background: #7822ff;
+  color: #ffffff;
+  border: 1px solid #9146ff;
+}
+.icon-html {
+  background: #e44d26;
+  color: #ffffff;
+  border: 1px solid #f16529;
+}
+.icon-css {
+  background: #1572b6;
+  color: #ffffff;
+  border: 1px solid #33a9dc;
+}
+.icon-gads {
+  background: #111418;
+  color: #4285f4;
+  border: 1px solid #202732;
+}
+.icon-meta {
+  background: #06152a;
+  color: #0081fb;
+  border: 1px solid #0a2d59;
+}
+
+.toolkit-name {
+  font-family: var(--ui);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c5c5c5;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.toolkit-card:hover .toolkit-name {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   EDUCATION TIMELINE
+   -------------------------------------------------------------------------- */
+.edu-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: clamp(60px, 8vh, 100px);
+}
+
+.edu-card {
+  background: #0a0a0d;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s var(--ease-out), border-color 0.28s ease;
+}
+
+.edu-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ink);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(222, 27, 28, 0.3);
+}
+
+.edu-card:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 12px var(--ink-hot);
+}
+
+.edu-year {
+  font-family: var(--disp);
+  font-size: 24px;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+
+.edu-degree {
+  font-family: var(--ui);
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+}
+
+.edu-institution {
+  font-size: 13.5px;
+  color: var(--dim);
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* --------------------------------------------------------------------------
+   CONTACT INFO STRIP (MATCHES USER IMAGE 2)
+   -------------------------------------------------------------------------- */
+.contact-strip-wrap {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 48px 0 24px;
+  margin-top: 40px;
+}
+
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+}
+
+.contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ui);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.contact-label svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--ink);
+  flex-shrink: 0;
+}
+
+.contact-val {
+  font-family: var(--ui);
+  font-size: clamp(15px, 1.35vw, 19px);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, transform 0.2s ease;
+  word-break: break-word;
+}
+
+a.contact-val:hover {
+  color: var(--ink-hot);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .toolkit-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .edu-timeline {
+    grid-template-columns: 1fr;
+  }
+  .contact-strip {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+  }
+}
